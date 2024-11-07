@@ -1,0 +1,25 @@
+.app_Layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100vh;
+}
+.app_Layout .app_sidebar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.app_Layout .app_outlet {
+  position: relative;
+  top: 8rem;
+  background-color: #f2f8fc;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+@media screen and (max-width: 650px) {
+  .app_Layout .app_outlet {
+    background-color: #fff;
+  }
+}

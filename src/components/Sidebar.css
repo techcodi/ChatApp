@@ -1,0 +1,25 @@
+.user_profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+.user_profile b {
+  font-size: 2rem;
+}
+.side_bar {
+  top: 0;
+  background-color: #4169d7;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.page_name {
+  display: flex;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.page_name a:visited {
+  color: #fff;
+}
