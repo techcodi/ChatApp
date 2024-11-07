@@ -6,6 +6,7 @@
 .single_chat .left_chat {
   width: auto;
   background-color: #c5d4fe;
+  transition: 300ms ease;
 }
 .single_chat .right-chat {
   width: 100rem;
@@ -27,6 +28,10 @@
   width: 80%;
   background-color: #4490e7;
   color: #fff;
+  padding: 1.3rem;
+}
+.chat_text_area button {
+  padding: 1.3rem;
 }
 .emoji {
   display: flex;
@@ -63,12 +68,26 @@
 }
 @media screen and (max-width: 1158px) {
   .chat_text_area {
-    width: 90%;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1058px) {
+  .chat_text_area {
+    width: 60%;
   }
 }
 @media screen and (max-width: 900px) {
+  body {
+    overflow: hidden;
+  }
   .single_chat {
     grid-template-columns: 20rem 1fr;
+  }
+
+  .right_chat ul li img {
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
   }
 }
 @media screen and (max-width: 650px) {

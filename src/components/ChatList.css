@@ -58,8 +58,8 @@
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  /* width: 40; */
-  /* height: 50%; */
+  width: 40vw;
+  height: 50%;
   padding: 2rem;
   border-radius: 10px;
   color: #fff;
@@ -83,11 +83,11 @@
 .add_form .avata_img {
   cursor: not-allowed;
 }
-/* .add_btn {
-  right: 0;
+.add_btn {
+  left: 0;
   bottom: 0;
   position: fixed;
-  margin-right: 3rem;
+  margin-left: 14rem;
   margin-bottom: 3rem;
   background-color: #4169d7;
   height: 5rem;
@@ -96,7 +96,7 @@
   font-size: 3rem;
   display: flex;
   justify-content: center;
-} */
+}
 .form_p p {
   text-align: center;
   color: #cccccc;
