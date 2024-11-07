@@ -73,7 +73,7 @@
 }
 @media screen and (max-width: 1058px) {
   .chat_text_area {
-    width: 60%;
+    width: 90%;
   }
 }
 @media screen and (max-width: 900px) {
@@ -92,8 +92,6 @@
 }
 @media screen and (max-width: 650px) {
   .single_chat .left_chat {
-    width: 100vw;
-    background-color: #fff;
     display: none;
   }
 }
