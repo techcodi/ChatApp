@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import SideBar from "../../components/SideBar";
-import AboutArtist from "../../components/AboutArtist";
+
 import "./AppLayout.css";
 function AppLayout() {
   return (

@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
   color: #242424;
   background-color: #fff;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 h1 {
@@ -41,9 +41,10 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: bolder;
   font-family: inherit;
   cursor: pointer;
+  color: #fff;
 }
 ul li {
   list-style-type: none;
