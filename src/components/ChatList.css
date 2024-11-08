@@ -20,8 +20,6 @@
 .form_p {
   display: flex;
   flex-direction: column-reverse;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
   margin-left: -2rem;
 }
 .friend_List_section ul .btn-remove {
@@ -53,8 +51,8 @@
   flex-direction: column;
   gap: 2rem;
   margin: 0;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 60%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -84,10 +82,10 @@
   cursor: not-allowed;
 }
 .add_btn {
-  left: 0;
+  left: 20%;
   bottom: 0;
   position: fixed;
-  margin-left: 14rem;
+
   margin-bottom: 3rem;
   background-color: #4169d7;
   height: 5rem;
@@ -101,6 +99,11 @@
   text-align: center;
   color: #cccccc;
   font-size: 5rem;
+}
+@media screen and (max-width: 900px) {
+  .btn-remove {
+    display: none;
+  }
 }
 @media screen and (max-width: 850px) {
   .add_form {
@@ -117,5 +120,13 @@
   }
   .add_form input {
     font-size: 2rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .add_btn {
+    left: 80%;
+  }
+  .btn-remove {
+    display: block;
   }
 }

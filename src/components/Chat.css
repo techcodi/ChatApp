@@ -66,16 +66,20 @@
   height: 5rem;
   width: 5rem;
 }
+@media screen and (max-width: 1300px) {
+  .chat_text_area input {
+    width: 60%;
+  }
+}
 @media screen and (max-width: 1158px) {
   .chat_text_area {
     width: 70%;
   }
-}
-@media screen and (max-width: 1058px) {
-  .chat_text_area {
-    width: 90%;
+  .chat_text_area input {
+    width: 60%;
   }
 }
+
 @media screen and (max-width: 900px) {
   body {
     overflow: hidden;
@@ -93,5 +97,14 @@
 @media screen and (max-width: 650px) {
   .single_chat .left_chat {
     display: none;
+  }
+  .chat_text_area {
+    width: 90%;
+  }
+  .chat_text_area input {
+    width: 70%;
+  }
+  .user_profile_header li {
+    margin-left: -2rem;
   }
 }

@@ -34,7 +34,7 @@ function Chat() {
         <ChatList />
       </div>
       <div className="right_chat">
-        <ul>
+        <ul className="user_profile_header">
           {singleChat ? (
             <li>
               <img src={singleChat.image} alt={singleChat.name} />
