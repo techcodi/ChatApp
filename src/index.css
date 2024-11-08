@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
   color: #242424;
   background-color: #fff;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 h1 {
