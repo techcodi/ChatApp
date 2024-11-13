@@ -5,14 +5,10 @@
 }
 .single_chat .left_chat {
   width: auto;
-  background-color: #c5d4fe;
   transition: 300ms ease;
-  overflow-y: scroll;
 }
 .single_chat .right-chat {
-  width: 100rem;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
+  width: 100%;
 }
 .chat_text_area {
   bottom: 0;

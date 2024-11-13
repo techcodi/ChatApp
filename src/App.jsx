@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppLayout from "./assets/pages/AppLayout";
 import "./App.css";
-import { MusicProvider } from "./contexts/AppContxts";
+import { ChatProvider } from "./contexts/AppContxts";
 
 import ChatList from "./components/ChatList";
 import Chat from "./components/Chat";
 
 function App() {
   return (
-    <MusicProvider>
+    <ChatProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppLayout />}>
@@ -18,7 +18,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </MusicProvider>
+    </ChatProvider>
   );
 }
 

@@ -30,6 +30,7 @@ body {
   color: #242424;
   background-color: #fff;
   overflow-y: auto;
+  height: 100%;
 }
 
 h1 {

@@ -3,7 +3,7 @@ import { useContext, createContext, useState } from "react";
 
 const ChatContext = createContext();
 
-function MusicProvider({ children }) {
+function ChatProvider({ children }) {
   const [addFriend, setAddFriend] = useState(function () {
     try {
       const storeChats = JSON.parse(localStorage.getItem("addFriend"));
@@ -64,7 +64,10 @@ function MusicProvider({ children }) {
   }
   function onAddChat(e) {
     e.preventDefault();
+    if (userChat === "") return;
+
     const newChat = { id: Date.now(), userChat, emoji };
+
     onSendMessage(newChat);
     setUserChat("");
     setEmoji("");
@@ -108,4 +111,4 @@ function getChats() {
   return context;
 }
 
-export { MusicProvider, getChats };
+export { ChatProvider, getChats };
