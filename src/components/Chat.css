@@ -2,13 +2,15 @@
   display: grid;
   grid-template-columns: 30rem 1fr;
   height: 100vh;
+  overflow-y: scroll;
 }
 .single_chat .left_chat {
   width: auto;
-  transition: 300ms ease;
 }
 .single_chat .right-chat {
   width: 100%;
+  flex: 1;
+  height: fit-content;
 }
 .chat_text_area {
   bottom: 0;
@@ -43,12 +45,12 @@
   font-size: 1.5rem;
   width: fit-content;
   border-radius: 10px;
-  margin-bottom: 1rem;
 }
 .user_message ul {
   width: 90%;
   overflow-wrap: break-word;
   word-break: break-all;
+  margin-top: 7rem;
 }
 .right_chat ul li {
   display: flex;

@@ -5,7 +5,11 @@
   margin-top: 1.02rem;
   color: #fff;
 }
-
+.friend_List_section {
+  height: 100vh;
+  flex: 1;
+  overflow-y: scroll;
+}
 .form_p ul li {
   display: flex;
   justify-content: space-between;
