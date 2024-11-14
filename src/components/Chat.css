@@ -52,7 +52,10 @@
   width: 90%;
   overflow-wrap: break-word;
   word-break: break-all;
-  margin-top: 7rem;
+  margin-top: 4rem;
+  position: relative;
+  top: 3rem;
+  z-index: 1;
 }
 .right_chat ul li {
   display: flex;
@@ -73,6 +76,7 @@
   width: 100%;
   color: #fff;
   margin-top: 0.5rem;
+  z-index: 2;
 }
 @media screen and (max-width: 1300px) {
   .chat_text_area input {
