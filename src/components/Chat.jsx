@@ -8,7 +8,6 @@ import EmojiPicker from "emoji-picker-react";
 import "./Chat.css";
 
 function Chat() {
-  // const [showEmoji, setShowEmoji] = useState(false);
   const { id } = useParams();
   const {
     addFriend,
@@ -21,8 +20,8 @@ function Chat() {
     setShowEmoji,
   } = getChats();
 
-  const singleChat = addFriend?.find((friend) => friend.id === id);
-
+  const friend = addFriend.find((friend) => friend.id === id);
+  const friendMessages = sendMessage[id] || [];
   // Clear the input when the ID changes
   useEffect(() => {
     setUserChat("");
@@ -35,10 +34,10 @@ function Chat() {
       </div>
       <div className="right_chat">
         <ul className="user_profile_header">
-          {singleChat ? (
+          {friend ? (
             <li>
-              <img src={singleChat.image} alt={singleChat.name} />
-              <p>{singleChat.message}</p>
+              <img src={friend.image} alt={friend.name} />
+              <p>{friend.name}</p>
             </li>
           ) : (
             "not found"
@@ -46,19 +45,24 @@ function Chat() {
         </ul>
 
         <div className="user_message">
-          <ul>
-            {sendMessage.map((chat) => (
-              <li key={chat.id}>
-                <p>
-                  {chat.userChat} {chat.emoji}
-                </p>
-              </li>
-            ))}
-          </ul>
+          {friend ? (
+            <ul>
+              {friendMessages.map((chat) => (
+                <li key={chat.id}>
+                  <p>
+                    {chat.text} {chat.emoji}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            "no chat for this none user"
+          )}
+
           <div className="emoji">
             {showEmoji && <EmojiPicker onEmojiClick={handleEmojiClick} />}
           </div>
-          <form className="chat_text_area" onSubmit={onAddChat}>
+          <form className="chat_text_area" onSubmit={(e) => onAddChat(e, id)}>
             <input
               type="text"
               placeholder="Type your message..."

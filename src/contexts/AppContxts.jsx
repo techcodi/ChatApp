@@ -4,6 +4,12 @@ import { useContext, createContext, useState } from "react";
 const ChatContext = createContext();
 
 function ChatProvider({ children }) {
+  const [showForm, setShowForm] = useState();
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [image, setImage] = useState("https://i.pravatar.cc/48?u=933372");
+  const [userChat, setUserChat] = useState();
+  const [emoji, setEmoji] = useState(false);
   const [addFriend, setAddFriend] = useState(function () {
     try {
       const storeChats = JSON.parse(localStorage.getItem("addFriend"));
@@ -12,15 +18,16 @@ function ChatProvider({ children }) {
       return [];
     }
   });
-  const [showForm, setShowForm] = useState();
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-  const [image, setImage] = useState("https://i.pravatar.cc/48?u=933372");
-  const [userChat, setUserChat] = useState();
-  const [emoji, setEmoji] = useState(false);
-  const [sendMessage, setSendMessage] = useState([]);
+
+  const [sendMessage, setSendMessage] = useState(function () {
+    try {
+      const saveChat = JSON.parse(localStorage.getItem("message"));
+      return saveChat || {};
+    } catch {
+      return [];
+    }
+  });
   const [showEmoji, setShowEmoji] = useState(false);
-  // const [idChatMessage, setIdChatMessage] = useState({});
 
   useEffect(
     function () {
@@ -34,13 +41,25 @@ function ChatProvider({ children }) {
     [addFriend]
   );
 
+  useEffect(
+    function () {
+      try {
+        localStorage.setItem("message", JSON.stringify(sendMessage));
+        console.log("Saved todos to localStorage:", sendMessage);
+      } catch (error) {
+        console.error("error", error);
+      }
+    },
+    [sendMessage]
+  );
+
   function showAddForm() {
     setShowForm((showForm) => !showForm);
   }
 
   function handleAdd(e) {
     e.preventDefault();
-    if (message === "") return;
+    if (name === "") return;
     console.log("Button clicked");
     const id = crypto.randomUUID();
     const newFriend = { id, message, name, image: `${image}?=${id}` };
@@ -59,16 +78,16 @@ function ChatProvider({ children }) {
     setAddFriend((addFriend) => addFriend.filter((friend) => friend.id !== id));
   }
 
-  function onSendMessage(userMessage) {
-    setSendMessage((sendMessage) => [...sendMessage, userMessage]);
-  }
-  function onAddChat(e) {
+  function onAddChat(e, friendId) {
     e.preventDefault();
     if (userChat === "") return;
 
-    const newChat = { id: Date.now(), userChat, emoji };
+    const newChat = { id: Date.now(), text: userChat, emoji };
+    setSendMessage((prevMessages) => ({
+      ...prevMessages,
+      [friendId]: [...(prevMessages[friendId] || []), newChat],
+    }));
 
-    onSendMessage(newChat);
     setUserChat("");
     setEmoji("");
   }

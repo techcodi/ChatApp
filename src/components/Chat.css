@@ -39,12 +39,13 @@
 }
 .user_message ul li {
   list-style-type: none;
-  padding: 0 2rem;
+  padding: 0 1rem;
   background-color: #4169d7;
   color: #fff;
   font-size: 1.5rem;
   width: fit-content;
   border-radius: 10px;
+  margin-bottom: 1rem;
 }
 .user_message ul {
   width: 90%;
@@ -70,6 +71,7 @@
   background-color: #4169d7;
   width: 100%;
   color: #fff;
+  margin-top: 0.5rem;
 }
 @media screen and (max-width: 1300px) {
   .chat_text_area input {

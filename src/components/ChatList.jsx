@@ -5,9 +5,9 @@ import "../components/ChatList.css";
 function ChatList() {
   const {
     showAddForm,
-    setMessage,
+    setName,
     showForm,
-    message,
+    name,
     handleAdd,
     addFriend,
     onDeleteFriend,
@@ -25,8 +25,8 @@ function ChatList() {
           <input
             name="name"
             type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <label htmlFor="image">Avatar</label>
           <input
@@ -49,7 +49,7 @@ function ChatList() {
               <li key={friend.id}>
                 <Link to={`/chat/${friend.id}`} className="friend_img">
                   <img src={friend.image} alt={friend.name} />
-                  <strong>{friend.message}</strong>
+                  <strong>{friend.name}</strong>
                 </Link>
                 <button
                   onClick={() => onDeleteFriend(friend.id)}
