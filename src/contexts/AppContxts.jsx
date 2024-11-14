@@ -57,6 +57,7 @@ function ChatProvider({ children }) {
     setShowForm((showForm) => !showForm);
   }
 
+  // for adding freind
   function handleAdd(e) {
     e.preventDefault();
     if (name === "") return;
@@ -78,6 +79,7 @@ function ChatProvider({ children }) {
     setAddFriend((addFriend) => addFriend.filter((friend) => friend.id !== id));
   }
 
+  // foe message sending
   function onAddChat(e, friendId) {
     e.preventDefault();
     if (userChat === "") return;
@@ -92,6 +94,7 @@ function ChatProvider({ children }) {
     setEmoji("");
   }
 
+  // the emoji function
   function handleEmojiClick(emojiObject) {
     setUserChat((prevChat) => prevChat + emojiObject.emoji);
     setShowEmoji(false);
