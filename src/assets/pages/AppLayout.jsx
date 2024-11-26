@@ -5,12 +5,9 @@ import "./AppLayout.css";
 function AppLayout() {
   return (
     <div className="app_Layout">
-      <div className="app_sidebar">
-        <SideBar />
-      </div>
-      <div className="app_outlet">
-        <Outlet />
-      </div>
+      <SideBar />
+
+      <Outlet />
     </div>
   );
 }

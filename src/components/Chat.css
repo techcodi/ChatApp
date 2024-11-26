@@ -9,9 +9,10 @@
   width: auto;
 }
 .single_chat .right-chat {
-  width: 100%;
+  width: 800px;
   flex: 1;
   height: fit-content;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .chat_text_area {
   bottom: 0;
@@ -20,13 +21,14 @@
   gap: 1rem;
   width: 75%;
   margin-bottom: 0.5rem;
-  z-index: 1;
+  z-index: 2;
   padding: 0 2rem;
+  width: 600px;
 }
 
 .chat_text_area input {
-  width: 80%;
-  background-color: #4490e7;
+  width: 100%;
+  background-color: #6e00ff;
   color: #fff;
   padding: 1.3rem;
 }
@@ -41,7 +43,7 @@
 .user_message ul li {
   list-style-type: none;
   padding: 0 1rem;
-  background-color: #4169d7;
+  background-color: #6e00ff;
   color: #fff;
   font-size: 1.5rem;
   width: fit-content;
@@ -49,7 +51,7 @@
   margin-bottom: 1rem;
 }
 .user_message ul {
-  width: 90%;
+  width: 60%;
   overflow-wrap: break-word;
   word-break: break-all;
   margin-top: 4rem;
@@ -72,11 +74,12 @@
 }
 .user_profile_header {
   position: fixed;
-  background-color: #4169d7;
-  width: 100%;
+  background-color: #6e00ff;
+  width: 600px;
   color: #fff;
   margin-top: 0.5rem;
   z-index: 2;
+  border-radius: 10px;
 }
 @media screen and (max-width: 1300px) {
   .chat_text_area input {
@@ -84,36 +87,63 @@
   }
 }
 @media screen and (max-width: 1158px) {
+  .user_profile_header,
   .chat_text_area {
-    width: 70%;
-  }
-  .chat_text_area input {
-    width: 60%;
+    width: 400px;
   }
 }
-
+@media screen and (max-width: 940px) {
+  .user_profile_header,
+  .chat_text_area {
+    width: 330px;
+  }
+}
 @media screen and (max-width: 900px) {
   .single_chat {
     grid-template-columns: 20rem 1fr;
   }
-
+  .user_profile_header,
+  .chat_text_area {
+    width: 600px;
+  }
+  .chat_text_area input {
+    width: 80%;
+  }
   .right_chat ul li img {
     border-radius: 50%;
     height: 3rem;
     width: 3rem;
   }
-}
-@media screen and (max-width: 650px) {
   .single_chat .left_chat {
     display: none;
   }
+}
+@media screen and (max-width: 815px) {
+  .user_profile_header {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 650px) {
   .chat_text_area {
-    width: 90%;
+    width: 100%;
+    background-color: #6e00ff;
+    padding: 0px 15px 0px 0px;
+    gap: 5px;
   }
   .chat_text_area input {
     width: 70%;
+    font-size: 16px;
   }
   .user_profile_header li {
     margin-left: -2rem;
+  }
+  .user_profile_header {
+    width: 100%;
+    border-radius: 0px;
+    margin-top: 0px;
+  }
+  .chat_text_area button {
+    background-color: #fff;
+    color: #6e00ff;
   }
 }

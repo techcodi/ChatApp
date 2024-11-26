@@ -61,11 +61,13 @@ function ChatList() {
             ))}
           </ul>
         ) : (
-          <p>Click on the + icon to add friend</p>
+          <p>
+            Click on the + <br /> icon to add friend
+          </p>
         )}
       </div>
       <button onClick={showAddForm} className="add_btn">
-        +
+        {showForm ? "x" : "+"}
       </button>
     </div>
   );

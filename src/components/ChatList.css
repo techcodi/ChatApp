@@ -1,17 +1,39 @@
-.friend_List_section h1 {
-  padding-left: 1rem;
-  height: 5rem;
-  background-color: #4169d7;
-  margin-top: 0.5rem;
-  color: #fff;
-  position: fixed;
-  width: 26%;
-  z-index: 1;
-}
+/* ==================== Friend List Section ==================== */
 .friend_List_section {
+  top: 0;
   height: 100vh;
+  width: fit-content;
   flex: 1;
   overflow-y: scroll;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-right: 2.8rem;
+  border-radius: 10px;
+  padding-right: 1rem;
+}
+.friend_List_section h1 {
+  padding: 1rem;
+  margin-top: 0rem;
+  position: fixed;
+  z-index: 1;
+  color: #fff;
+  background-color: #6e00ff;
+  width: 26rem;
+  border-radius: 10px;
+}
+.friend_List_section ul .btn-remove {
+  background-color: #6e00ff;
+  height: 3rem;
+  width: 6rem;
+  font-weight: 600;
+}
+
+/* ==================== Form Styles ==================== */
+.form_p {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-left: -2rem;
+  position: relative;
+  top: 7rem;
 }
 .form_p ul li {
   display: flex;
@@ -28,19 +50,14 @@
   border-radius: 10px;
   cursor: pointer;
 }
-.form_p {
-  display: flex;
-  flex-direction: column-reverse;
-  margin-left: -2rem;
-  position: relative;
-  top: 7rem;
+.form_p p {
+  text-align: center;
+  color: #555;
+  font-size: 3rem;
+  padding: 0 3rem;
 }
-.friend_List_section ul .btn-remove {
-  background-color: #4490e7;
-  height: 3rem;
-  width: 6rem;
-  font-weight: 600;
-}
+
+/* ==================== Friend Image Styles ==================== */
 .friend_img {
   display: flex;
   justify-content: space-between;
@@ -57,9 +74,9 @@
   width: 5rem;
 }
 
-/*  =============== ADD FORM=======*/
+/* ==================== Add Form Styles ==================== */
 .add_form {
-  background-color: #4490e7;
+  background-color: #6e00ff;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -75,15 +92,15 @@
   border-radius: 10px;
   color: #fff;
   transition: 300ms ease;
-  z-index: 1;
+  z-index: 2;
 }
 .add_form button {
   width: 100%;
   padding: 8px 12px;
   font-weight: 600;
   font-size: 1.3rem;
+  color: #6e00ff;
   background-color: #fff;
-  color: #4490e7;
   cursor: pointer;
   pointer-events: all;
   position: relative;
@@ -96,12 +113,13 @@
   cursor: not-allowed;
 }
 .add_btn {
-  left: 20%;
+  left: 30%;
   bottom: 0;
   position: fixed;
   font-weight: 600;
   margin-bottom: 3rem;
-  background-color: #4169d7;
+  background-color: #6e00ff;
+  color: #fff;
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
@@ -109,34 +127,41 @@
   display: flex;
   justify-content: center;
 }
-.form_p p {
-  text-align: center;
-  color: #cccccc;
-  font-size: 5rem;
-}
+
+/* ==================== Responsive Styles ==================== */
 @media screen and (max-width: 900px) {
   .btn-remove {
     display: none;
   }
   .friend_List_section h1 {
-    margin-top: 6px;
+    width: 73%;
+  }
+  .friend_List_section {
+    width: 90%;
   }
 }
 @media screen and (max-width: 850px) {
   .add_form {
     width: 80vw;
     height: 50vh;
+    top: 45%;
   }
   .add_form button {
     cursor: pointer;
     padding: 8px 12px;
     font-weight: 600;
     font-size: 2rem;
-    background-color: #fff;
-    color: #4490e7;
   }
   .add_form input {
     font-size: 2rem;
+  }
+  .add_btn {
+    left: 80%;
+    margin-bottom: 9rem;
+    border-radius: 10px;
+  }
+  .friend_List_section h1 {
+    width: 70%;
   }
 }
 @media screen and (max-width: 650px) {
@@ -146,9 +171,17 @@
   .btn-remove {
     display: block;
   }
+  .friend_List_section {
+    width: 95%;
+    margin: 0px;
+    box-shadow: none;
+  }
   .friend_List_section h1 {
-    background-color: #fff;
-    color: #4169d7;
-    margin-top: 3rem;
+    width: 100%;
+    margin-top: 0px;
+    border-radius: 0px;
+  }
+  .form_p ul li {
+    width: 96%;
   }
 }
